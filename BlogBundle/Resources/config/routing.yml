@@ -1,0 +1,11 @@
+itarato_blog_homepage:
+  pattern:  /list
+  defaults: { _controller: ItaratoBlogBundle:Default:index }
+  requirements:
+    _method: GET
+
+blog_post_creation_post:
+  pattern: /list
+  defaults: { _controller: ItaratoBlogBundle:Default:onSubmitPost }
+  requirements:
+    _method: POST

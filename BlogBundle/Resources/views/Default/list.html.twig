@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h2>Blog</h2>
+
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div>
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% render "ItaratoBlogBundle:Default:blogPostList" %}
+
+    <div>
+        <fieldset>
+            <legend>Create post</legend>
+            <form action="{{ path('blog_post_creation_post') }}" method="post" {{ form_enctype(form) }}>
+                {{ form_widget(form) }}
+                <input type="submit" value="Create post" />
+            </form>
+        </fieldset>
+    </div>
+{% endblock %}
